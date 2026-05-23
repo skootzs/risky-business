@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Risky Business</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Risky Business</h1>
+
+            <p>
+                Machine Learning-Based Quantitative Equity Forecasting
+            </p>
+        </header>
+
+        <!-- PERFORMANCE CHART -->
+
+        <section class="card">
+
+            <h2>Strategy Performance</h2>
+
+            <canvas id="performanceChart"></canvas>
+
+        </section>
+
+        <!-- FEATURE IMPORTANCE -->
+
+        <section class="card">
+
+            <h2>Feature Importance</h2>
+
+            <canvas id="featureChart"></canvas>
+
+        </section>
+
+        <section class="card">
+    <h2>Dashboard Controls</h2>
+
+    <label for="scoreFilter">Minimum Predicted Score:</label>
+    <input 
+        type="range" 
+        id="scoreFilter" 
+        min="0" 
+        max="1" 
+        step="0.01" 
+        value="0"
+    >
+
+    <span id="scoreValue">0.00</span>
+
+    <br><br>
+
+    <label for="sortSelect">Sort stocks by:</label>
+    <select id="sortSelect">
+        <option value="predicted_score">Predicted Score</option>
+        <option value="return_5d">5D Return</option>
+        <option value="return_20d">20D Return</option>
+        <option value="volatility_20d">Volatility</option>
+    </select>
+</section>
+        <!-- TOP STOCK PICKS -->
+
+        <section class="card">
+
+            <h2>Latest Top Stock Picks</h2>
+
+            <table id="stockTable">
+
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Predicted Score</th>
+                        <th>5D Return</th>
+                        <th>20D Return</th>
+                        <th>Volatility</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+<section class="card">
+    <h2>How the Model Works</h2>
+
+    <div class="explanation-list">
+        <div class="explanation-item">
+            <strong>Momentum Factors:</strong>
+            measure whether a stock has recently moved upward or downward.
+        </div>
+
+        <div class="explanation-item">
+            <strong>Volatility Factor:</strong>
+            captures how unstable the stock has been over the last 20 trading days.
+        </div>
+
+        <div class="explanation-item">
+            <strong>Mean-Reversion Factor:</strong>
+            compares price against its moving average to detect overextension.
+        </div>
+
+        <div class="explanation-item">
+            <strong>Volume Factor:</strong>
+            detects unusual trading activity relative to recent volume.
+        </div>
+
+        <div class="explanation-item">
+            <strong>Prediction Target:</strong>
+            the model predicts whether each stock will outperform SPY over the next 5 trading days.
+        </div>
+    </div>
+</section>
+
+</html>

@@ -1,0 +1,1 @@
+[{"feature": "return_5d", "importance": 0.19560914586096964}, {"feature": "return_20d", "importance": 0.17786558641027955}, {"feature": "volatility_20d", "importance": 0.2409940928204283}, {"feature": "moving_avg_ratio", "importance": 0.21910745660628925}, {"feature": "volume_ratio", "importance": 0.1664237183020333}]
